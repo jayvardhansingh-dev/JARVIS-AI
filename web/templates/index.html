@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#02060b"
+    >
+
+    <meta
+        name="description"
+        content="J.A.R.V.I.S - Local AI Control Center developed by Jayvardhan Singh"
+    >
+
+    <title>J.A.R.V.I.S | AI Control Center</title>
+
+    <!-- ======================================================
+         PREMIUM CSS
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ======================================================
+         BACKGROUND
+    ======================================================= -->
+
+    <div class="background-grid"></div>
+
+    <div class="scanline"></div>
+
+
+    <!-- ======================================================
+         MAIN APPLICATION
+    ======================================================= -->
+
+    <main class="jarvis-container">
+
+
+        <!-- ==================================================
+             TOP HEADER
+        =================================================== -->
+
+        <header class="topbar">
+
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    J
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        J.A.R.V.I.S
+                    </h1>
+
+                    <p>
+                        JUST A RATHER VERY INTELLIGENT SYSTEM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ONLINE STATUS -->
+
+            <div class="online-status">
+
+                <span
+                    class="status-dot"
+                    id="statusDot"
+                ></span>
+
+                <span id="statusText">
+                    CONNECTING
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==================================================
+             DASHBOARD
+        =================================================== -->
+
+        <section class="dashboard">
+
+
+            <!-- =================================================
+                 SYSTEM PANEL
+            ================================================== -->
+
+            <aside class="system-panel">
+
+
+                <!-- =============================================
+                     ARC REACTOR
+                ============================================== -->
+
+                <div class="reactor-section">
+
+                    <div class="reactor">
+
+
+                        <div class="reactor-core">
+                            J
+                        </div>
+
+
+                        <div
+                            class="reactor-ring ring-one"
+                        ></div>
+
+
+                        <div
+                            class="reactor-ring ring-two"
+                        ></div>
+
+
+                        <div
+                            class="reactor-ring ring-three"
+                        ></div>
+
+                    </div>
+
+
+                    <h2>
+                        JARVIS
+                    </h2>
+
+
+                    <p>
+                        SYSTEM ONLINE
+                    </p>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     SYSTEM METRICS
+                ============================================== -->
+
+                <div class="metrics">
+
+
+                    <!-- CPU -->
+
+                    <div class="metric">
+
+                        <div class="metric-header">
+
+                            <span>
+                                CPU
+                            </span>
+
+                            <span id="cpuValue">
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                id="cpuBar"
+                                class="progress-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- RAM -->
+
+                    <div class="metric">
+
+                        <div class="metric-header">
+
+                            <span>
+                                RAM
+                            </span>
+
+                            <span id="ramValue">
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                id="ramBar"
+                                class="progress-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BATTERY -->
+
+                    <div class="metric">
+
+                        <div class="metric-header">
+
+                            <span>
+                                BATTERY
+                            </span>
+
+                            <span id="batteryValue">
+                                N/A
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                id="batteryBar"
+                                class="progress-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     CLOCK
+                ============================================== -->
+
+                <div class="system-time">
+
+                    <div id="time">
+                        --:--:--
+                    </div>
+
+                    <div id="date">
+                        Loading...
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     SYSTEM INFORMATION
+                ============================================== -->
+
+                <div class="system-info">
+
+
+                    <div>
+
+                        <span>
+                            OS
+                        </span>
+
+                        <strong id="os">
+                            Windows
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            CORE
+                        </span>
+
+                        <strong>
+                            JARVIS AI
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            MODE
+                        </span>
+
+                        <strong id="mode">
+                            ONLINE
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            VOICE
+                        </span>
+
+                        <strong id="voiceStatus">
+                            CHECKING
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            VERSION
+                        </span>
+
+                        <strong id="version">
+                            2.0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 CHAT PANEL
+            ================================================== -->
+
+            <section class="chat-panel">
+
+
+                <!-- =============================================
+                     CHAT HEADER
+                ============================================== -->
+
+                <div class="chat-header">
+
+
+                    <div>
+
+                        <span class="small-label">
+                            ARTIFICIAL INTELLIGENCE
+                        </span>
+
+
+                        <h2>
+                            JARVIS CONVERSATION
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="clear-button"
+                        id="clearButton"
+                        onclick="clearChat()"
+                    >
+                        CLEAR
+                    </button>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     CHAT MESSAGES
+                ============================================== -->
+
+                <div
+                    class="chat-messages"
+                    id="chatMessages"
+                >
+
+
+                    <!-- INITIAL JARVIS MESSAGE -->
+
+                    <div class="message jarvis-message">
+
+
+                        <div class="avatar">
+                            J
+                        </div>
+
+
+                        <div class="message-content">
+
+                            <span class="message-name">
+                                JARVIS
+                            </span>
+
+
+                            <p>
+                                Good evening, sir.
+                                I am online and ready
+                                to assist you.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     THINKING INDICATOR
+                ============================================== -->
+
+                <div
+                    class="typing"
+                    id="typing"
+                >
+                    JARVIS is thinking...
+                </div>
+
+
+
+                <!-- =============================================
+                     INPUT AREA
+                ============================================== -->
+
+                <div class="input-area">
+
+
+                    <!-- VOICE INPUT -->
+
+                    <button
+                        class="voice-button"
+                        id="voiceButton"
+                        onclick="startVoiceInput()"
+                        title="Voice input"
+                        aria-label="Start voice input"
+                    >
+                        🎙
+                    </button>
+
+
+                    <!-- TEXT INPUT -->
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Ask JARVIS anything..."
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+
+
+                    <!-- SEND -->
+
+                    <button
+                        class="send-button"
+                        id="sendButton"
+                        onclick="sendMessage()"
+                    >
+                        SEND
+                    </button>
+
+                </div>
+
+
+
+                <!-- INPUT HINT -->
+
+                <div class="input-hint">
+
+                    Press
+                    <strong>Enter</strong>
+                    to send
+
+                    <span>•</span>
+
+                    Voice input supported
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FOOTER
+        =================================================== -->
+
+        <footer class="jarvis-footer">
+
+
+            <div>
+                J.A.R.V.I.S
+            </div>
+
+
+            <div>
+                JUST A RATHER VERY INTELLIGENT SYSTEM
+            </div>
+
+
+            <div>
+                DEVELOPED BY
+                <strong>
+                    JAYVARDHAN SINGH
+                </strong>
+            </div>
+
+
+            <div>
+                VERSION 2.0
+            </div>
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- ======================================================
+         JAVASCRIPT
+    ======================================================= -->
+
+    <script>
+
+
+        // =====================================================
+        // DOM ELEMENTS
+        // =====================================================
+
+        const messageInput =
+            document.getElementById(
+                "messageInput"
+            );
+
+
+        const chatMessages =
+            document.getElementById(
+                "chatMessages"
+            );
+
+
+        const typing =
+            document.getElementById(
+                "typing"
+            );
+
+
+        const sendButton =
+            document.getElementById(
+                "sendButton"
+            );
+
+
+        const voiceButton =
+            document.getElementById(
+                "voiceButton"
+            );
+
+
+        // =====================================================
+        // ENTER KEY
+        // =====================================================
+
+        messageInput.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Enter" &&
+                    !event.shiftKey
+                ) {
+
+                    event.preventDefault();
+
+                    sendMessage();
+
+                }
+
+            }
+        );
+
+
+        // =====================================================
+        // ADD CHAT MESSAGE
+        // =====================================================
+
+        function addMessage(
+            text,
+            sender
+        ) {
+
+
+            const message =
+                document.createElement(
+                    "div"
+                );
+
+
+            message.className =
+                "message " +
+                (
+                    sender === "user"
+                    ? "user-message"
+                    : "jarvis-message"
+                );
+
+
+            // AVATAR
+
+            const avatar =
+                document.createElement(
+                    "div"
+                );
+
+
+            avatar.className =
+                "avatar";
+
+
+            avatar.innerText =
+                sender === "user"
+                ? "U"
+                : "J";
+
+
+            // CONTENT
+
+            const content =
+                document.createElement(
+                    "div"
+                );
+
+
+            content.className =
+                "message-content";
+
+
+            // NAME
+
+            const name =
+                document.createElement(
+                    "span"
+                );
+
+
+            name.className =
+                "message-name";
+
+
+            name.innerText =
+                sender === "user"
+                ? "YOU"
+                : "JARVIS";
+
+
+            // TEXT
+
+            const paragraph =
+                document.createElement(
+                    "p"
+                );
+
+
+            paragraph.innerText =
+                text;
+
+
+            // BUILD
+
+            content.appendChild(
+                name
+            );
+
+
+            content.appendChild(
+                paragraph
+            );
+
+
+            message.appendChild(
+                avatar
+            );
+
+
+            message.appendChild(
+                content
+            );
+
+
+            chatMessages.appendChild(
+                message
+            );
+
+
+            // AUTO SCROLL
+
+            chatMessages.scrollTop =
+                chatMessages.scrollHeight;
+
+        }
+
+
+        // =====================================================
+        // SEND MESSAGE
+        // =====================================================
+
+        async function sendMessage() {
+
+
+            const message =
+                messageInput.value.trim();
+
+
+            if (!message) {
+
+                return;
+
+            }
+
+
+            // SHOW USER MESSAGE
+
+            addMessage(
+                message,
+                "user"
+            );
+
+
+            // CLEAR INPUT
+
+            messageInput.value = "";
+
+
+            // DISABLE SEND
+
+            sendButton.disabled = true;
+
+
+            // THINKING
+
+            typing.classList.add(
+                "active"
+            );
+
+
+            try {
+
+
+                const response =
+                    await fetch(
+                        "/api/chat",
+                        {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify({
+                                    message:
+                                        message
+                                })
+
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                // STOP THINKING
+
+                typing.classList.remove(
+                    "active"
+                );
+
+
+                // JARVIS RESPONSE
+
+                if (
+                    data.reply
+                ) {
+
+                    addMessage(
+                        data.reply,
+                        "jarvis"
+                    );
+
+                }
+
+
+                // SERVER ERROR
+
+                if (
+                    !response.ok
+                ) {
+
+                    console.error(
+                        data
+                    );
+
+                }
+
+            }
+
+
+            catch (error) {
+
+
+                typing.classList.remove(
+                    "active"
+                );
+
+
+                addMessage(
+                    "I am unable to connect to the JARVIS server, sir.",
+                    "jarvis"
+                );
+
+
+                console.error(
+                    "JARVIS connection error:",
+                    error
+                );
+
+            }
+
+
+            finally {
+
+                sendButton.disabled =
+                    false;
+
+                messageInput.focus();
+
+            }
+
+        }
+
+
+        // =====================================================
+        // CLEAR CHAT
+        // =====================================================
+
+        async function clearChat() {
+
+
+            try {
+
+
+                await fetch(
+                    "/api/chat/clear",
+                    {
+                        method: "POST"
+                    }
+                );
+
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Clear chat error:",
+                    error
+                );
+
+            }
+
+
+            // CLEAR UI
+
+            chatMessages.innerHTML = "";
+
+
+            addMessage(
+                "Conversation cleared, sir. I am ready.",
+                "jarvis"
+            );
+
+
+            messageInput.focus();
+
+        }
+
+
+        // =====================================================
+        // VOICE INPUT
+        // =====================================================
+
+        function startVoiceInput() {
+
+
+            const SpeechRecognition =
+                window.SpeechRecognition ||
+                window.webkitSpeechRecognition;
+
+
+            if (
+                !SpeechRecognition
+            ) {
+
+                alert(
+                    "Voice recognition is not supported by this browser."
+                );
+
+                return;
+
+            }
+
+
+            const recognition =
+                new SpeechRecognition();
+
+
+            recognition.lang =
+                "en-US";
+
+
+            recognition.continuous =
+                false;
+
+
+            recognition.interimResults =
+                false;
+
+
+            recognition.maxAlternatives =
+                1;
+
+
+            // LISTENING UI
+
+            voiceButton.classList.add(
+                "listening"
+            );
+
+
+            voiceButton.innerText =
+                "🔴";
+
+
+            try {
+
+                recognition.start();
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    error
+                );
+
+            }
+
+
+            // RESULT
+
+            recognition.onresult =
+                function(event) {
+
+
+                    const text =
+                        event
+                            .results[0][0]
+                            .transcript;
+
+
+                    messageInput.value =
+                        text;
+
+
+                    // Automatically send
+
+                    sendMessage();
+
+                };
+
+
+            // ERROR
+
+            recognition.onerror =
+                function(event) {
+
+                    console.error(
+                        "Voice recognition error:",
+                        event.error
+                    );
+
+                };
+
+
+            // END
+
+            recognition.onend =
+                function() {
+
+                    voiceButton.classList.remove(
+                        "listening"
+                    );
+
+
+                    voiceButton.innerText =
+                        "🎙";
+
+                };
+
+        }
+
+
+        // =====================================================
+        // UPDATE SYSTEM STATUS
+        // =====================================================
+
+        async function updateStatus() {
+
+
+            try {
+
+
+                const response =
+                    await fetch(
+                        "/api/status"
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                // STATUS
+
+                document.getElementById(
+                    "statusText"
+                ).innerText =
+                    data.status;
+
+
+                const statusDot =
+                    document.getElementById(
+                        "statusDot"
+                    );
+
+
+                if (
+                    data.status === "ONLINE"
+                ) {
+
+                    statusDot.classList.add(
+                        "active"
+                    );
+
+                }
+
+                else {
+
+                    statusDot.classList.remove(
+                        "active"
+                    );
+
+                }
+
+
+                // CPU
+
+                const cpu =
+                    Number(data.cpu) || 0;
+
+
+                document.getElementById(
+                    "cpuValue"
+                ).innerText =
+                    Math.round(cpu) + "%";
+
+
+                document.getElementById(
+                    "cpuBar"
+                ).style.width =
+                    Math.min(
+                        100,
+                        cpu
+                    ) + "%";
+
+
+                // RAM
+
+                const ram =
+                    Number(data.ram) || 0;
+
+
+                document.getElementById(
+                    "ramValue"
+                ).innerText =
+                    Math.round(ram) + "%";
+
+
+                document.getElementById(
+                    "ramBar"
+                ).style.width =
+                    Math.min(
+                        100,
+                        ram
+                    ) + "%";
+
+
+                // BATTERY
+
+                if (
+                    data.battery !== null &&
+                    data.battery !== undefined
+                ) {
+
+
+                    const battery =
+                        Number(
+                            data.battery
+                        ) || 0;
+
+
+                    document.getElementById(
+                        "batteryValue"
+                    ).innerText =
+                        Math.round(
+                            battery
+                        ) + "%";
+
+
+                    document.getElementById(
+                        "batteryBar"
+                    ).style.width =
+                        Math.min(
+                            100,
+                            battery
+                        ) + "%";
+
+                }
+
+                else {
+
+
+                    document.getElementById(
+                        "batteryValue"
+                    ).innerText =
+                        "N/A";
+
+
+                    document.getElementById(
+                        "batteryBar"
+                    ).style.width =
+                        "0%";
+
+                }
+
+
+                // TIME
+
+                document.getElementById(
+                    "time"
+                ).innerText =
+                    data.time;
+
+
+                // DATE
+
+                document.getElementById(
+                    "date"
+                ).innerText =
+                    data.date;
+
+
+                // OS
+
+                document.getElementById(
+                    "os"
+                ).innerText =
+                    data.os;
+
+
+                // MODE
+
+                document.getElementById(
+                    "mode"
+                ).innerText =
+                    data.mode ||
+                    "ONLINE";
+
+
+                // VERSION
+
+                document.getElementById(
+                    "version"
+                ).innerText =
+                    data.version ||
+                    "2.0";
+
+
+                // VOICE STATUS
+
+                document.getElementById(
+                    "voiceStatus"
+                ).innerText =
+                    data.voice
+                    ? "ONLINE"
+                    : "OFFLINE";
+
+
+            }
+
+
+            catch (error) {
+
+
+                console.error(
+                    "Status error:",
+                    error
+                );
+
+
+                document.getElementById(
+                    "statusText"
+                ).innerText =
+                    "OFFLINE";
+
+
+                document.getElementById(
+                    "statusDot"
+                ).classList.remove(
+                    "active"
+                );
+
+
+                document.getElementById(
+                    "voiceStatus"
+                ).innerText =
+                    "OFFLINE";
+
+            }
+
+        }
+
+
+        // =====================================================
+        // INITIALIZE
+        // =====================================================
+
+        updateStatus();
+
+
+        // Update system information every 2 seconds
+
+        setInterval(
+            updateStatus,
+            2000
+        );
+
+
+        // Focus chat input
+
+        window.addEventListener(
+            "load",
+            function() {
+
+                messageInput.focus();
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
